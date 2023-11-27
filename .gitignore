@@ -1,0 +1,65 @@
+# Default ignored files
+
+
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.Reactivities.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Default .NET Framework and Visual Studio files to ignore
+[Bb]in/
+[Oo]bj/
+[Tt]est[Rr]esults/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.vs/
+*.vshost.*
+*.vshost.exe.config
+*.vshost.exe.manifest
+build/
+_ReSharper.*/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+Ankh.NoLoad
+
+# Rider-specific files
+.idea/
+*.dotSettings
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+# except build/, which is used as an MSBuild target.
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+
+# Enable "build/" folder in the NuGet Packages folder 
+!**/[Pp]ackages/*/build/
+
+# Tooling
+_ReSharper*/
+_TeamCity*
+
+# Visual Studio 2015+ cache/options directory
+.vs/
