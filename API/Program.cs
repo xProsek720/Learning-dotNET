@@ -1,4 +1,10 @@
+using System.Threading.RateLimiting;
 using API.Controllers;
+using Application.Activities;
+using Application.Core;
+using AutoMapper;
+using Domain;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -23,7 +29,9 @@ internal class Program
                 policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
             });
         });
-
+        builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly((typeof(List.Handler).Assembly)));
+        builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+        
         var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,10 +76,18 @@ internal class Program
             var context = services.GetRequiredService<DataContext>();
             await context.Database.MigrateAsync();
             await Seed.SeedData(context);
+            var mediator = services.GetRequiredService<IMediator>();
+            
             app.MapGet("/api/activities/{Id}", (Guid ID) =>
-                new ActivitiesController(context).GetActivity(ID));
+                new ActivitiesController(mediator).GetActivity(ID));
             app.MapGet("/api/activities", () =>
-                new ActivitiesController(context).GetActivities());
+                new ActivitiesController(mediator).GetActivities());
+            app.MapPost("/api/activities",
+                (Activity activity) => new ActivitiesController(mediator).CreateActivity(activity));
+            app.MapPut("/api/activities/{Id}",
+                (Guid Id, Activity activity) => new ActivitiesController(mediator).EditActivity(Id, activity));
+            app.MapDelete("/api/activities/{Id}", (Guid Id) => new ActivitiesController(mediator).DeleteActivity(Id));
+
         }
         catch (Exception e)
         {
