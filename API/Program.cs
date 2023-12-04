@@ -1,8 +1,5 @@
-using System.Threading.RateLimiting;
 using API.Controllers;
-using Application.Activities;
-using Application.Core;
-using AutoMapper;
+using API.Extentions;
 using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -16,22 +13,7 @@ internal class Program
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddDbContext<DataContext>(opt =>
-        {
-            opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-        });
-        builder.Services.AddCors(opt =>
-        {
-            opt.AddPolicy("CorsPolicy", policy =>
-            {
-                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
-            });
-        });
-        builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly((typeof(List.Handler).Assembly)));
-        builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
-        
+        builder.Services.AddAplicationServices(builder.Configuration);
         var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -77,11 +59,12 @@ internal class Program
             await context.Database.MigrateAsync();
             await Seed.SeedData(context);
             var mediator = services.GetRequiredService<IMediator>();
+
             
             app.MapGet("/api/activities/{Id}", (Guid ID) =>
                 new ActivitiesController(mediator).GetActivity(ID));
-            app.MapGet("/api/activities", () =>
-                new ActivitiesController(mediator).GetActivities());
+            app.MapGet("/api/activities", (CancellationToken ct) =>
+                new ActivitiesController(mediator).GetActivities(ct));
             app.MapPost("/api/activities",
                 (Activity activity) => new ActivitiesController(mediator).CreateActivity(activity));
             app.MapPut("/api/activities/{Id}",
