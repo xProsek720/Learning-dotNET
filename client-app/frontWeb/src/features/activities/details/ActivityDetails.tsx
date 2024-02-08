@@ -1,7 +1,7 @@
-import {Button, Card, Grid, Image} from "semantic-ui-react";
+import {Grid}from "semantic-ui-react";
 import {useStore} from "../../../app/stores/store.ts";
 import LoadinComponent from "../../../app/layout/loadinComponent.tsx";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {observer} from "mobx-react-lite";
 import ActivityDetailedHeader from "./ActivityDetailedHeader.tsx";
