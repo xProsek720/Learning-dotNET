@@ -29,7 +29,7 @@ jobs:
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
-          Copy-Item -Path "client-app/frontWeb/*" -Destination "site/wwwroot/" -Recurse -Force
+          Copy-Item -Path "client-app/frontWeb" -Destination "site/wwwroot/" -Recurse -Force
   # Adjust the source and destination paths as needed
 
       # Continue with the existing .NET setup and build steps
