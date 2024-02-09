@@ -22,7 +22,7 @@ jobs:
       # Step to install dependencies and build the React app
       - name: Install and build React app
         run: |
-          cd path/to/your/react-app  # Adjust this to the path of your React app relative to the root of your repository
+          cd client-app/frontWeb  # Adjust this to the path of your React app relative to the root of your repository
           npm install
           npm run build
 
