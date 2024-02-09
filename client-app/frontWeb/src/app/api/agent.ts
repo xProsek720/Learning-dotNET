@@ -1,7 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 import {Activity} from "../models/activity.ts";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -24,6 +23,7 @@ axios.interceptors.response.use(async response => {
 
 })
 
+// @ts-ignore
 const responseBody = <T>(response: AxiosResponse<T>) => response.data.value;
 
 const requests = {
