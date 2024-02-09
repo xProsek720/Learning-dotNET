@@ -29,7 +29,8 @@ jobs:
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
-          cp -r client-app/frontWeb* site/wwwroot/  # Adjust the source and destination paths as needed
+          Copy-Item -Path "client-app/frontWeb" -Destination "site/wwwroot/" -Recurse -Force
+  # Adjust the source and destination paths as needed
 
       # Continue with the existing .NET setup and build steps
       - name: Set up .NET Core
@@ -70,6 +71,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'jumpin-events'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0BCAA840C428488B901A0ED00819E9DC }}
           package: .
