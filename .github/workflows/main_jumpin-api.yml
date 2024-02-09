@@ -39,4 +39,4 @@ jobs:
           app-name: 'jumpin-api'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_78B1735DBC334980B32D2C727EEA0402 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DC3CD02C019F4466A9E6085DA67A2DAF }}
