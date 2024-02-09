@@ -13,7 +13,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
-      "applicationUrl": "https://jumpin-api.azurewebsites.net:80",
+      "applicationUrl": "https://jumpinevents.azurewebsites.net:80",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
