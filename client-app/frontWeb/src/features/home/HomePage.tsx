@@ -7,7 +7,7 @@ export default function HomePage() {
             <Container text>
                 <Header as='h1' inverted>
                     <Image size='massive' src='/assets/logo.png' alt='logo' style={{marginBottom: 12}}/>
-                    Reactivities
+                    JumpIn!
                 </Header>
                 <Button as={Link} to='/activities' size='huge' inverted>
                     Take me to the Activities

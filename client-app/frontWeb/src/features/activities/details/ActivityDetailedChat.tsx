@@ -18,7 +18,7 @@ export default observer(function ActivityDetailedChat() {
                     <Comment>
                         <Comment.Avatar src='/assets/user.png'/>
                         <Comment.Content>
-                            <Comment.Author as='a'>Matt</Comment.Author>
+                            <Comment.Author as='a'>[Sample User 3]</Comment.Author>
                             <Comment.Metadata>
                                 <div>Today at 5:42PM</div>
                             </Comment.Metadata>
@@ -32,7 +32,7 @@ export default observer(function ActivityDetailedChat() {
                     <Comment>
                         <Comment.Avatar src='/assets/user.png'/>
                         <Comment.Content>
-                            <Comment.Author as='a'>Joe Henderson</Comment.Author>
+                            <Comment.Author as='a'>[Sample User 4]</Comment.Author>
                             <Comment.Metadata>
                                 <div>5 days ago</div>
                             </Comment.Metadata>

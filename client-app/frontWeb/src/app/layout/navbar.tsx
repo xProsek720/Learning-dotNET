@@ -9,7 +9,7 @@ export default function NavBar() {
             <Container>
                 <MenuItem as={NavLink} to='/' header>
                     <img src='/assets/logo.png' alt='logo' style={{marginRight: '5px'}}/>
-                    Reactivities
+                    JumpIN
                 </MenuItem>
                 <MenuItem name='Activities' as={NavLink} to='/activities'/>
                 <MenuItem>
