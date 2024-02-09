@@ -29,11 +29,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: site/wwwroot
+          path: /home/site/wwwroot
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
-          Copy-Item -Path "API/reactivities.db" -Destination "site/wwwroot" -Recurse -Force
+          Copy-Item -Path "API/reactivities.db" -Destination "/home/site/wwwroot" -Recurse -Force
   # Adjust the source and destination paths as needed
 
       # Continue with the existing .NET setup and build steps
