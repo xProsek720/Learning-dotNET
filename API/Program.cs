@@ -22,7 +22,7 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        app.UseCors("CorsPolicy");
+        app.UseCors("AllowAll");
 
         app.UseHttpsRedirection();
 
