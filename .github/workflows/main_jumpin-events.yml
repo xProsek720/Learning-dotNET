@@ -15,7 +15,7 @@ jobs:
 
       # Step to setup Node.js for React app build
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20' # Specify the Node.js version you need
 
@@ -25,7 +25,11 @@ jobs:
           cd client-app/frontWeb  # Adjust this to the path of your React app relative to the root of your repository
           npm install
           npm run build
-
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: client-app/frontWeb/dist 
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
@@ -61,11 +65,18 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+    
+          
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: .net-app
 
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
+          
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
