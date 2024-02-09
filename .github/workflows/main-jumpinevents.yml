@@ -33,7 +33,7 @@ jobs:
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
-          Copy-Item -Path "API/reactivities.db" -Destination "site/wwwroot/" -Recurse -Force
+          Copy-Item -Path "API/reactivities.db" -Destination "C:\home\site\wwwroot\" -Recurse -Force
   # Adjust the source and destination paths as needed
 
       # Continue with the existing .NET setup and build steps
@@ -81,7 +81,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'jumpin-events'
+          app-name: 'jumpinevents'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0BCAA840C428488B901A0ED00819E9DC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2E46278092FD4A7C8EDEE55820F1361C }}
           package: .
