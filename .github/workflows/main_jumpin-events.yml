@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: dist 
+          path: client-app/frontWeb/dist 
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
         run: |
