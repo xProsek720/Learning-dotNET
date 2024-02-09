@@ -24,7 +24,7 @@ jobs:
         run: |
           cd client-app/frontWeb  # Adjust this to the path of your React app relative to the root of your repository
           npm install
-          npm run build
+          sudo npm run build
 
       # Step to copy the React build output to the .NET Core app's wwwroot directory
       - name: Copy React build to .NET wwwroot
