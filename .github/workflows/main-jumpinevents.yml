@@ -77,11 +77,17 @@ jobs:
         with:
           name: node-app
           
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7352FD2C3252475CB7DDA9656DA27273 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_87B246C660A149FCBBA8519C60B4E64D }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4F17F97B1D014D37A6CD0C80D2792F7F }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'jumpinevents'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2E46278092FD4A7C8EDEE55820F1361C }}
           package: .
