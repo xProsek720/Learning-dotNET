@@ -34,6 +34,7 @@ jobs:
       - name: Copy React build to .NET wwwroot
         run: |
           Copy-Item -Path "client-app/frontWeb/dist" -Destination "site/wwwroot/" -Recurse -Force
+          Copy-Item -Path "API/reactivities.db" -Destination "site/wwwroot/" -Recurse -Force
   # Adjust the source and destination paths as needed
 
       # Continue with the existing .NET setup and build steps
