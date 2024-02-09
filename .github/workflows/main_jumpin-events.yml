@@ -70,6 +70,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'jumpin-events'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0BCAA840C428488B901A0ED00819E9DC }}
           package: .
