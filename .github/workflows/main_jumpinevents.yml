@@ -1,4 +1,4 @@
-name: Build and deploy ASP.Net Core app to Azure Web App - jumpin-events
+name: Build and deploy ASP.Net Core app to Azure Web App - jumpinevents
 
 on:
   push:
