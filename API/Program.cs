@@ -30,7 +30,7 @@ internal class Program
         app.UseStaticFiles(new StaticFileOptions
         {
             FileProvider = new PhysicalFileProvider(
-                "C:/home/site/wwwroot/app"),
+                "C:/home/site/wwwroot"),
             RequestPath = "/app/"
         });
 
@@ -84,7 +84,7 @@ internal class Program
             app.MapGet("/", async context =>
             {
                 // Set the path to 'index.html' within the 'wwwroot' directory
-                var filePath = "app/index.html";
+                var filePath = "index.html";
     
                 // Serve 'index.html'
                 await context.Response.SendFileAsync(filePath);
@@ -92,7 +92,7 @@ internal class Program
             app.MapGet("/index.js", async context =>
             {
                 // Set the path to 'index.html' within the 'wwwroot' directory
-                var filePath = "app/index.js";
+                var filePath = "index.js";
     
                 context.Response.ContentType = "text/javascript";
                 // Serve 'index.html'
@@ -101,7 +101,7 @@ internal class Program
             app.MapGet("/index.css", async context =>
             {
                 // Set the path to 'index.html' within the 'wwwroot' directory
-                var filePath = "app/index.css";
+                var filePath = "index.css";
                 
                 context.Response.ContentType = "text/css";
                 // Serve 'index.html'
