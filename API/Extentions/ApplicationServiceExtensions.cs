@@ -19,7 +19,8 @@ public static class ApplicationServiceExtensions
         services.AddSwaggerGen();
         services.AddDbContext<DataContext>(opt =>
         {
-            opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+            opt.UseMySql(config.GetConnectionString("MySqlConnection"),
+                new MySqlServerVersion(new Version(8, 0, 21)));
         });
         services.AddCors(opt =>
         {
