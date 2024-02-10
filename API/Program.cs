@@ -30,7 +30,7 @@ internal class Program
         app.UseStaticFiles(new StaticFileOptions
         {
             FileProvider = new PhysicalFileProvider(
-                "/app/"),
+                "C:/home/site/wwwroot/app/"),
             RequestPath = "/app/"
         });
 
