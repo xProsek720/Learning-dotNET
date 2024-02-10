@@ -12,7 +12,6 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-        builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddAplicationServices(builder.Configuration);
         var app = builder.Build();
@@ -26,8 +25,7 @@ internal class Program
         app.UseCors("AllowAll");
 
         app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseDefaultFiles();
+        
 
         var summaries = new[]
         {
@@ -82,18 +80,8 @@ internal class Program
 
         }
 
-        app.UseRouting();
 
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-
-            // Fallback to serve index.html for any non-API routes
-            endpoints.MapFallbackToFile("index.html");
-        });
-        
         app.Run();
-        
     }
 }
 
