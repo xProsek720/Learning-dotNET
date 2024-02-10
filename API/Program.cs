@@ -31,7 +31,7 @@ internal class Program
         {
             FileProvider = new PhysicalFileProvider(
                 "C:/home/site/wwwroot"),
-            RequestPath = "/app/"
+            RequestPath = "/app"
         });
 
 
