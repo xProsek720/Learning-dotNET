@@ -242,7 +242,18 @@ internal class Program
 
                 await context.Response.SendFileAsync(filePath);
             });
+            app.MapGet("/vite.svg", async context =>
+            {
+                // Assuming 'vite.svg' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "vite.svg";
 
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/svg+xml";
+
+                // Serve 'vite.svg'
+                await context.Response.SendFileAsync(filePath);
+            });
 
 
         }
