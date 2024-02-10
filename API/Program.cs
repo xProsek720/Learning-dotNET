@@ -81,6 +81,7 @@ internal class Program
 
         }
 
+        app.UseRouting();
 
         app.UseEndpoints(endpoints =>
         {
