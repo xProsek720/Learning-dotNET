@@ -25,6 +25,7 @@ internal class Program
         app.UseCors("AllowAll");
 
         app.UseHttpsRedirection();
+        app.UseDefaultFiles();
 
         var summaries = new[]
         {
