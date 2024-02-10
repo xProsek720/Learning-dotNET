@@ -8,7 +8,7 @@ export default defineConfig({
   },
   plugins: [react()],
   build: {
-    outDir: "site/wwwroot/",
+    outDir: "site/wwwroot/app",
     sourcemap: true,
     rollupOptions: {
       output: {
