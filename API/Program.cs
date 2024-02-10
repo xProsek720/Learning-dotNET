@@ -56,7 +56,7 @@ internal class Program
         try
         {
             var context = services.GetRequiredService<DataContext>();
-            await context.Database.MigrateAsync();
+            await context.Database.EnsureCreatedAsync();
             await Seed.SeedData(context);
             var mediator = services.GetRequiredService<IMediator>();
 
