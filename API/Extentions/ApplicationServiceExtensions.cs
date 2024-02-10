@@ -25,7 +25,7 @@ public static class ApplicationServiceExtensions
         {
             opt.AddPolicy("CorsPolicy", policy =>
             {
-                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://*:443");
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://*:80");
             });
         });
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly((typeof(List.Handler).Assembly)));
