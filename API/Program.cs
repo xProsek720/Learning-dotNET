@@ -25,7 +25,10 @@ internal class Program
         app.UseCors("AllowAll");
 
         app.UseHttpsRedirection();
-        
+        app.UseDefaultFiles(); // Rewrite requests to the root URL to '/index.html'
+        app.UseStaticFiles(); // Serve static files from 'wwwroot'
+
+        app.UseRouting();
 
         var summaries = new[]
         {
