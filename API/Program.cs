@@ -107,6 +107,115 @@ internal class Program
                 // Serve 'index.html'
                 await context.Response.SendFileAsync(filePath);
             });
+            app.MapGet("/assets/user.png", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/user.png";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/png";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/placeholder.png", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/placeholder.png";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/png";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/logo.png", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/logo.png";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/png";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/culture.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/culture.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/drinks.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/drinks.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/film.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/film.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/food.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/food.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/music.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/music.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/assets/categoryImages/travel.jpg", async context =>
+            {
+                // Assuming 'image.png' is directly in the 'wwwroot' directory
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "assets/categoryImages/travel.jpg";
+
+                // Explicitly set the Content-Type header
+                context.Response.ContentType = "image/jpg";
+
+                // Serve 'image.png'
+                await context.Response.SendFileAsync(filePath);
+            });
+
 
         }
         catch (Exception e)
