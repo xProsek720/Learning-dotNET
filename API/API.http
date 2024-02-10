@@ -1,6 +1,10 @@
-@API_HostAddress = https://https://jumpin-events.azurewebsites.net/
+@API_HostAddress = https://jumpinevents.azurewebsites.net/
 
-GET {{API_HostAddress}}/weatherforecast/
+GET {{API_HostAddress}}/pogoda/
+Accept: application/json
+###
+
+GET {{API_HostAddress}}/api/activities
 Accept: application/json
 
 ###

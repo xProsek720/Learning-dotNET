@@ -64,7 +64,7 @@ internal class Program
             app.MapGet("/api/activities/{Id}", (Guid ID) =>
                 new ActivitiesController(mediator).GetActivity(ID));
             app.MapGet("/api/activities", (CancellationToken ct) =>
-                new ActivitiesController(mediator).GetActivities(ct));
+                new ActivitiesController(mediator).GetActivities(ct)).WithName("GetActivities").WithOpenApi();
             app.MapPost("/api/activities",
                 (Activity activity) => new ActivitiesController(mediator).CreateActivity(activity));
             app.MapPut("/api/activities/{Id}",
