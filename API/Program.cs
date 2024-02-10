@@ -87,6 +87,7 @@ internal class Program
                 // Set the path to 'index.html' within the 'wwwroot' directory
                 var filePath = "index.js";
     
+                context.Response.ContentType = "text/javascript";
                 // Serve 'index.html'
                 await context.Response.SendFileAsync(filePath);
             });
@@ -94,7 +95,8 @@ internal class Program
             {
                 // Set the path to 'index.html' within the 'wwwroot' directory
                 var filePath = "index.css";
-    
+                
+                context.Response.ContentType = "text/css";
                 // Serve 'index.html'
                 await context.Response.SendFileAsync(filePath);
             });
