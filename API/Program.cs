@@ -74,6 +74,14 @@ internal class Program
             app.MapPut("/api/activities/{Id}",
                 (Guid Id, Activity activity) => new ActivitiesController(mediator).EditActivity(Id, activity));
             app.MapDelete("/api/activities/{Id}", (Guid Id) => new ActivitiesController(mediator).DeleteActivity(Id));
+            app.MapGet("/", async context =>
+            {
+                // Set the path to 'index.html' within the 'wwwroot' directory
+                var filePath = Path.Combine(app.Environment.WebRootPath, "index.html");
+    
+                // Serve 'index.html'
+                await context.Response.SendFileAsync(filePath);
+            });
 
         }
         catch (Exception e)
