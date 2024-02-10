@@ -77,7 +77,23 @@ internal class Program
             app.MapGet("/", async context =>
             {
                 // Set the path to 'index.html' within the 'wwwroot' directory
-                var filePath = Path.Combine(app.Environment.WebRootPath, "index.html");
+                var filePath = "index.html";
+    
+                // Serve 'index.html'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/index.js", async context =>
+            {
+                // Set the path to 'index.html' within the 'wwwroot' directory
+                var filePath = "index.js";
+    
+                // Serve 'index.html'
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/index.css", async context =>
+            {
+                // Set the path to 'index.html' within the 'wwwroot' directory
+                var filePath = "index.css";
     
                 // Serve 'index.html'
                 await context.Response.SendFileAsync(filePath);
