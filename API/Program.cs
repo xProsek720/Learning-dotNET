@@ -215,6 +215,34 @@ internal class Program
                 // Serve 'image.png'
                 await context.Response.SendFileAsync(filePath);
             });
+            app.MapGet("/icons.woff2", async context =>
+            {
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "icons.woff2";
+
+                context.Response.ContentType = "font/woff2";
+
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/icons.woff", async context =>
+            {
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "icons.woff";
+
+                context.Response.ContentType = "font/woff";
+
+                await context.Response.SendFileAsync(filePath);
+            });
+            app.MapGet("/icons.tff", async context =>
+            {
+                var webRootPath = app.Environment.WebRootPath;
+                var filePath = "icons.tff";
+
+                context.Response.ContentType = "font/tff";
+
+                await context.Response.SendFileAsync(filePath);
+            });
+
 
 
         }
