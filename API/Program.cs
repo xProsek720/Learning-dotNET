@@ -3,6 +3,7 @@ using API.Extentions;
 using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Persistence;
 
 internal class Program
@@ -26,7 +27,13 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.UseDefaultFiles(); // Rewrite requests to the root URL to '/index.html'
-        app.UseStaticFiles(); // Serve static files from 'wwwroot'
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            FileProvider = new PhysicalFileProvider(
+                "/app/"),
+            RequestPath = "/app/"
+        });
+
 
         app.UseRouting();
 

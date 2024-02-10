@@ -8,7 +8,7 @@ const sleep = (delay: number) => {
     })
 }
 
-axios.defaults.baseURL = 'http://localhost/api';
+axios.defaults.baseURL = 'https://jumpinevents.azurewebsites.net/api';
 
 axios.interceptors.response.use(async response => {
     try {
